@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor List</title>
+</head>
+<body>
+    <h1>Doctor List</h1>
+    <ul>
+        {% for doctor in object_list %}
+            <li>
+                <a href="{% url 'doctor_detail' doctor.id %}">{{ doctor.name }}</a>
+                <p>Specialization: {{ doctor.specialization }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
